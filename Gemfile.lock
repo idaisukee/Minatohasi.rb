@@ -1,0 +1,13 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    Otohatiyau (0.0.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  Otohatiyau
+
+BUNDLED WITH
+   1.15.4
