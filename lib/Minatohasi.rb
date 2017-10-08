@@ -45,8 +45,8 @@ class Minatohasi
 	end
 
 	def self::from_date_time(date_time)
-		year = date_time.year - 1
-		ext_yday = self::ext_yday(date_time.yday, date_time.hour, date_time.min, date_time.sec) - (date_time.offset - Minatohasi::PT) - 1
+		year = date_time.year
+		ext_yday = self::ext_yday(date_time.yday, date_time.hour, date_time.min, date_time.sec) - (date_time.offset - Minatohasi::PT)
 		self::from_ordinal(year, ext_yday)
 	end
 end
