@@ -6,7 +6,9 @@ test_dir = File.join(base_dir, "test")
 
 require(File.join(lib_dir, 'Minatohasi.rb'))
 class SampleTest < Test::Unit::TestCase
-  def test_sample1
+  def test_serial
 		assert_equal(Minatohasi::serial(0, 0), 0)
+		assert_equal(Minatohasi::serial(0, 1), 1)
+		assert_equal(Minatohasi::serial(1, 0), 365)
   end
 end
