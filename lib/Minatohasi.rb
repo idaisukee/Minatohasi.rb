@@ -50,11 +50,3 @@ class Minatohasi
 		self::from_ordinal(year, ext_yday)
 	end
 end
-p Minatohasi::serial(1,1)
-p Minatohasi::serial(225,17)
-p DateTime.now.yday
-p DateTime.new(2017,1,1).yday
-
-offset = Minatohasi::JST - Minatohasi::PT
-p Minatohasi::from_ordinal(2017,282 + (10)/24.0 - offset)
-p Minatohasi::from_date_time(DateTime.now).to_f
