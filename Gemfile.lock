@@ -2,12 +2,16 @@ GEM
   remote: https://rubygems.org/
   specs:
     Otohatiyau (0.0.1)
+    power_assert (0.4.1)
+    test-unit (3.2.3)
+      power_assert
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   Otohatiyau
+  test-unit
 
 BUNDLED WITH
    1.15.4
