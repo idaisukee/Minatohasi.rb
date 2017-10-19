@@ -11,6 +11,8 @@ class SampleTest < Test::Unit::TestCase
 		assert_equal(Minatohasi::serial(0, 0), 0)
 		assert_equal(Minatohasi::serial(0, 1), 1)
 		assert_equal(Minatohasi::serial(1, 0), 365)
+		assert_equal(Minatohasi::serial(-1, 0), -366)
+		assert_equal(Minatohasi::serial(-1, 1), -365)
   end
 
 	def test_from_ordinal
@@ -23,6 +25,9 @@ class SampleTest < Test::Unit::TestCase
 		assert_equal(Minatohasi::from_ordinal(epoch.year + 2, epoch.yday), 365 * 2)
 		assert_equal(Minatohasi::from_ordinal(epoch.year + 3, epoch.yday), 365 * 3)
 		assert_equal(Minatohasi::from_ordinal(epoch.year + 4, epoch.yday), 365 * 3 + 366)
+
+		assert_equal(Minatohasi::from_ordinal(epoch.year - 1, epoch.yday), -366)
+		assert_equal(Minatohasi::from_ordinal(epoch.year - 2, epoch.yday), - (366 +365))
 	end
 
 	def test_from_date_time
