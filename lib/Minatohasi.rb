@@ -9,6 +9,7 @@ class Minatohasi
 	GC_EPOCH = DateTime.new(1, 1, 1, 0, 0, 0, Rational(1, 24), START)
 	PT = Rational(1, 24)
 	JST = Rational(9, 24)
+	GAP = DateTime::jd(DateTime::ITALY).day - DateTime::jd(DateTime::ITALY - 1).day - 1
 
 	Y1D = 365
 
@@ -45,10 +46,35 @@ class Minatohasi
 		epoch_tomowekaha = self::tomowekaha(EPOCH.year - 1, epoch_sirotiyau)
 
 		isimatu = self::isimatu(date_time.hour, date_time.min, date_time.sec, date_time.offset)
-		sirotiyau = self::sirotiyau(date_time.yday - 1, isimatu)
+		if date_time.year == DateTime::jd(DateTime::ITALY).year && DateTime::jd(DateTime::ITALY) <= date_time then
+			sirotiyau = self::sirotiyau(date_time.yday - 1 + self::GAP, isimatu)
+		else
+			sirotiyau = self::sirotiyau(date_time.yday - 1, isimatu)
+		end
 		tomowekaha = self::tomowekaha(date_time.year - 1, sirotiyau)
-
 		rd = tomowekaha - epoch_tomowekaha
 	end
 end
+p DateTime::jd(DateTime::ITALY - 1)
+p DateTime::jd(DateTime::ITALY)
+p DateTime::jd(DateTime::ITALY + 1)
 
+p DateTime::jd(DateTime::ITALY - 1).yday
+p DateTime::jd(DateTime::ITALY).yday
+p DateTime::jd(DateTime::ITALY + 1).yday
+
+p DateTime.new(2017, 10, 15).yday
+p DateTime.new(1582, 12, 31).yday
+p Minatohasi::GAP
+p Minatohasi::rd(DateTime.new(1582, 10, 4, 0, 0, 0)).to_f
+p Minatohasi::rd(DateTime.new(1582, 10, 15, 0, 0, 0)).to_f
+array = [
+	DateTime.new(1582, 10, 4),
+	DateTime.new(1582, 10, 15),
+	DateTime.new(1582, 10, 16),
+	DateTime.new(1583, 10, 16)
+]
+array.each do |date_time|
+	p date_time.year == DateTime::jd(DateTime::ITALY).year && DateTime::jd(DateTime::ITALY) <= date_time
+end
+p DateTime::jd(DateTime::ITALY) 
