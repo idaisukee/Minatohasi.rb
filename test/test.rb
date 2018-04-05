@@ -8,6 +8,10 @@ test_dir = File.join(base_dir, "test")
 require(File.join(lib_dir, 'Minatohasi.rb'))
 class SampleTest < Test::Unit::TestCase
 
+	def test_gap
+		assert_equal(Minatohasi::GAP, 10)
+	end
+
 	def test_isimatu
 		assert_equal(Minatohasi::isimatu(0, 0, 0, Minatohasi::PT), 0)
 		assert_equal(Minatohasi::isimatu(0, 0, 0, 0), Minatohasi::PT)
