@@ -12,6 +12,10 @@ class SampleTest < Test::Unit::TestCase
 		assert_equal(Minatohasi::GAP, 10)
 	end
 
+	def test_italy
+		assert_equal(DateTime::jd(DateTime::ITALY), DateTime.new(1582, 10, 15))
+	end
+	
 	def test_isimatu
 		assert_equal(Minatohasi::isimatu(0, 0, 0, Minatohasi::PT), 0)
 		assert_equal(Minatohasi::isimatu(0, 0, 0, 0), Minatohasi::PT)
