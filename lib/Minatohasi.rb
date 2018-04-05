@@ -55,26 +55,3 @@ class Minatohasi
 		rd = tomowekaha - epoch_tomowekaha
 	end
 end
-p DateTime::jd(DateTime::ITALY - 1)
-p DateTime::jd(DateTime::ITALY)
-p DateTime::jd(DateTime::ITALY + 1)
-
-p DateTime::jd(DateTime::ITALY - 1).yday
-p DateTime::jd(DateTime::ITALY).yday
-p DateTime::jd(DateTime::ITALY + 1).yday
-
-p DateTime.new(2017, 10, 15).yday
-p DateTime.new(1582, 12, 31).yday
-p Minatohasi::GAP
-p Minatohasi::rd(DateTime.new(1582, 10, 4, 0, 0, 0)).to_f
-p Minatohasi::rd(DateTime.new(1582, 10, 15, 0, 0, 0)).to_f
-array = [
-	DateTime.new(1582, 10, 4),
-	DateTime.new(1582, 10, 15),
-	DateTime.new(1582, 10, 16),
-	DateTime.new(1583, 10, 16)
-]
-array.each do |date_time|
-	p date_time.year == DateTime::jd(DateTime::ITALY).year && DateTime::jd(DateTime::ITALY) <= date_time
-end
-p DateTime::jd(DateTime::ITALY) 
