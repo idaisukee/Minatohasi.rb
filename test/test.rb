@@ -22,7 +22,6 @@ class SampleTest < Test::Unit::TestCase
 		assert_equal(Minatohasi::isimatu(12, 30, 0), Rational(12, 24) + Rational(30, 24 * 60))
 	end
 
-=begin
 	def test_tomowekaha
 		assert_equal(Minatohasi::tomowekaha(0, 0), 0)
 		assert_equal(Minatohasi::tomowekaha(0, 1), 1)
@@ -45,6 +44,8 @@ class SampleTest < Test::Unit::TestCase
 		assert_equal(Minatohasi::tomowekaha(4, 0), Minatohasi::Y4D)
 		assert_equal(Minatohasi::tomowekaha(100, 0), Minatohasi::Y100D)
 	end
+
+=begin
 
 	def test_rd
 		assert_equal(Minatohasi::rd(DateTime.new(2017, 10, 29, 8, 00, 0, Minatohasi::JST)).to_f, 82216)
