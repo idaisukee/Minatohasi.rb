@@ -6,10 +6,6 @@ require 'date'
 class Minatohasi
 	START = 0
 	EPOCH = DateTime.new(1792, 9, 22, 0, 0, 0, Rational(1, 24), START)
-	GC_EPOCH = DateTime.new(1, 1, 1, 0, 0, 0, Rational(1, 24), START)
-	PT = Rational(1, 24)
-	JST = Rational(9, 24)
-	GAP = DateTime::jd(DateTime::ITALY).day - DateTime::jd(DateTime::ITALY - 1).day - 1
 
 	Y1D = 365
 

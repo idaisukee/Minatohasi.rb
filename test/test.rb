@@ -8,10 +8,6 @@ test_dir = File.join(base_dir, "test")
 require(File.join(lib_dir, 'Minatohasi.rb'))
 class SampleTest < Test::Unit::TestCase
 
-	def test_gap
-		assert_equal(Minatohasi::GAP, 10)
-	end
-
 	def test_italy
 		assert_equal(DateTime::jd(DateTime::ITALY), DateTime.new(1582, 10, 15))
 	end
