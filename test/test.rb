@@ -45,73 +45,19 @@ class SampleTest < Test::Unit::TestCase
 		assert_equal(Minatohasi::tomowekaha(100, 0), Minatohasi::Y100D)
 	end
 
-=begin
-
 	def test_rd
-		assert_equal(Minatohasi::rd(DateTime.new(2017, 10, 29, 8, 00, 0, Minatohasi::JST)).to_f, 82216)
-		assert_equal(Minatohasi::rd(Minatohasi::EPOCH), 0)
-		epoch = Minatohasi::EPOCH
-		(0..10_000).each do |i|
-			assert_equal(Minatohasi::rd(epoch + i), i)
-		end
-		(0..100_000).each do |i|
-			assert_equal(Minatohasi::rd(epoch + i), i)
-		end
-
-		(-10_000..0).each do |i|
-			assert_equal(Minatohasi::rd(epoch + i), i)
-		end
-
-		(-20_000..0).each do |i|
-			assert_equal(Minatohasi::rd(epoch + i), i)
-		end
-
-		(-30_000..0).each do |i|
-			assert_equal(Minatohasi::rd(epoch + i), i)
-		end
-
-		(-40_000..0).each do |i|
-			assert_equal(Minatohasi::rd(epoch + i), i)
-		end
-
-		(-50_000..0).each do |i|
-			assert_equal(Minatohasi::rd(epoch + i), i)
-		end
-
-		(-60_000..0).each do |i|
-			assert_equal(Minatohasi::rd(epoch + i), i)
-		end
-
-		(-70_000..0).each do |i|
-			assert_equal(Minatohasi::rd(epoch + i), i)
-		end
-
-		(-80_000..0).each do |i|
-			assert_equal(Minatohasi::rd(epoch + i), i)
-		end
-
-		(-90_000..0).each do |i|
-			p epoch + i
-			assert_equal(Minatohasi::rd(epoch + i), i)
-		end
-
-		assert_equal(Minatohasi::rd(epoch), 0)
-		assert_equal(Minatohasi::rd(epoch - 1), -1)
-		assert_equal(Minatohasi::rd(epoch - 100), -100)
-		assert_equal(Minatohasi::rd(epoch - 200), -200)
-		assert_equal(Minatohasi::rd(epoch - 250), -250)
-		assert_equal(Minatohasi::rd(epoch - 260), -260)
-		assert_equal(Minatohasi::rd(epoch - 265), -265)
-		assert_equal(Minatohasi::rd(epoch - 266), -266)
-		assert_equal(Minatohasi::rd(epoch - 270), -270)
-		assert_equal(Minatohasi::rd(epoch - 290), -290)
-		assert_equal(Minatohasi::rd(epoch - 299), -299)
-		assert_equal(Minatohasi::rd(epoch - 300), -300)
-		assert_equal(Minatohasi::rd(epoch - 364), -364)
-		assert_equal(Minatohasi::rd(epoch - 365), -365)
-		assert_equal(Minatohasi::rd(epoch - 366), -366)
-		assert_equal(Minatohasi::rd(epoch - 100_000), -100_000)
-
+		assert_equal(Minatohasi::rd(2018, 1, 0, 0, 0).to_f, 82280)
+		assert_equal(Minatohasi::rd(2017, DateTime.new(2017, 3, 27).yday, 0, 0, 0).to_f, 82000)
+		assert_equal(Minatohasi::rd(2018, DateTime.new(2018, 4, 28).yday, 0, 0, 0).to_f, 82397)
+		assert_equal(Minatohasi::rd(2018, DateTime.new(2018, 4, 28).yday, 12, 0, 0).to_f, 82397.5)
+		assert_equal(Minatohasi::rd(1792, DateTime.new(1792, 9, 22).yday, 0, 0, 0).to_f, 0)
+		assert_equal(Minatohasi::rd(1792, DateTime.new(1792, 9, 22).yday, 12, 0, 0).to_f, 0.5)
+		assert_equal(Minatohasi::rd(1792, DateTime.new(1792, 9, 22).yday, 18, 0, 0).to_f, 0.75)
+		assert_equal(Minatohasi::rd(1792, DateTime.new(1792, 9, 23).yday, 0, 0, 0).to_f, 1)
+		assert_equal(Minatohasi::rd(1792, DateTime.new(1792, 9, 23).yday, 12, 0, 0).to_f, 1.5)
+		assert_equal(Minatohasi::rd(1793, DateTime.new(1793, 9, 22).yday, 0, 0, 0).to_f, 365)
+		assert_equal(Minatohasi::rd(1792, DateTime.new(1792, 9, 21).yday, 0, 0, 0).to_f, -1)
+		assert_equal(Minatohasi::rd(1791, DateTime.new(1791, 9, 22).yday, 0, 0, 0).to_f, -366)
 	end
-=end
+
 end

@@ -40,18 +40,15 @@ class Minatohasi
 		tomowekaha = days + sirotiyau
 	end
 
-	def self::rd(date_time)
-		epoch_isimatu = self::isimatu(EPOCH.hour, EPOCH.min, EPOCH.sec, EPOCH.offset)
+	def self::rd(year, yday, hour, min, sec)
+		
+		epoch_isimatu = self::isimatu(EPOCH.hour, EPOCH.min, EPOCH.sec)
 		epoch_sirotiyau = self::sirotiyau(EPOCH.yday - 1, epoch_isimatu)
 		epoch_tomowekaha = self::tomowekaha(EPOCH.year - 1, epoch_sirotiyau)
 
-		isimatu = self::isimatu(date_time.hour, date_time.min, date_time.sec, date_time.offset)
-		if date_time.year == DateTime::jd(DateTime::ITALY).year && DateTime::jd(DateTime::ITALY) <= date_time then
-			sirotiyau = self::sirotiyau(date_time.yday - 1 + self::GAP, isimatu)
-		else
-			sirotiyau = self::sirotiyau(date_time.yday - 1, isimatu)
-		end
-		tomowekaha = self::tomowekaha(date_time.year - 1, sirotiyau)
+		isimatu = self::isimatu(hour, min, sec)
+		sirotiyau = self::sirotiyau(yday - 1, isimatu)
+		tomowekaha = self::tomowekaha(year - 1, sirotiyau)
 		rd = tomowekaha - epoch_tomowekaha
 	end
 end
