@@ -17,15 +17,12 @@ class SampleTest < Test::Unit::TestCase
 	end
 	
 	def test_isimatu
-		assert_equal(Minatohasi::isimatu(0, 0, 0, Minatohasi::PT), 0)
-		assert_equal(Minatohasi::isimatu(0, 0, 0, 0), Minatohasi::PT)
-		assert_equal(Minatohasi::isimatu(0, 0, 0, Minatohasi::JST), Minatohasi::PT - Minatohasi::JST)
-		assert_equal(Minatohasi::isimatu(0, 0, 0, Rational(2, 24)), Minatohasi::PT - Rational(2, 24))
-		assert_equal(Minatohasi::isimatu(0, 0, 0, Rational(-2, 24)), Minatohasi::PT + Rational(2, 24))
-		assert_equal(Minatohasi::isimatu(12, 0, 0, Minatohasi::PT), Rational(12, 24))
-		assert_equal(Minatohasi::isimatu(12, 30, 0, Minatohasi::PT), Rational(12, 24) + Rational(30, 24 * 60))
+		assert_equal(Minatohasi::isimatu(0, 0, 0), 0)
+		assert_equal(Minatohasi::isimatu(12, 0, 0), Rational(12, 24))
+		assert_equal(Minatohasi::isimatu(12, 30, 0), Rational(12, 24) + Rational(30, 24 * 60))
 	end
 
+=begin
 	def test_tomowekaha
 		assert_equal(Minatohasi::tomowekaha(0, 0), 0)
 		assert_equal(Minatohasi::tomowekaha(0, 1), 1)
@@ -115,4 +112,5 @@ class SampleTest < Test::Unit::TestCase
 		assert_equal(Minatohasi::rd(epoch - 100_000), -100_000)
 
 	end
+=end
 end

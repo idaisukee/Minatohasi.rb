@@ -22,8 +22,8 @@ class Minatohasi
 	# 400 years
 	Y400D = 4 * Y100D + 1
 
-	def self::isimatu(hour, min, sec, offset)
-		Rational(hour, 24) + Rational(min, 24 * 60) + Rational(sec, 24 * 60 * 60) - (offset - self::PT)
+	def self::isimatu(hour, min, sec)
+		Rational(hour, 24) + Rational(min, 24 * 60) + Rational(sec, 24 * 60 * 60)
 	end
 
 	def self::sirotiyau(yday, isimatu)
