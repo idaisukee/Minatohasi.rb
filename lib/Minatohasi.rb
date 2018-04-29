@@ -1,5 +1,6 @@
+require 'rubygems'
 require 'bundler/setup'
-Bundler.require
+Bundler.require(:default)
 
 
 require 'date'

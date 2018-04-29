@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'Minatohasi'
-  s.version     = '0.0.0'
+  s.version     = '0.0.1'
   s.date        = '2018-04-29'
   s.summary     = "calc rd with tomowekaha"
   s.description = "calc rd with tomowekaha"
