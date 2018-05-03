@@ -27,11 +27,11 @@ class Minatohasi
 	end
 
 	def self::tomowekaha(year, sirotiyau)
-		otohatiyau = Otohatiyau::otohatiyau(year, [400, 100, 4])
-		c = otohatiyau[0][0]
-		b = otohatiyau[0][1]
-		a = otohatiyau[0][2]
-		y = otohatiyau[1][2]
+		essence_otohatiyau = Otohatiyau::essence_otohatiyau(year, [400, 100, 4])
+		c = essence_otohatiyau[0][0]
+		b = essence_otohatiyau[0][1]
+		a = essence_otohatiyau[0][2]
+		y = essence_otohatiyau[1]
 		days = Y400D * c + Y100D * b + Y4D * a + Y1D * y
 		tomowekaha = days + sirotiyau
 	end
