@@ -2,7 +2,6 @@ require 'rubygems'
 require 'bundler/setup'
 Bundler.require(:default)
 
-
 require 'date'
 class Minatohasi
 	START = 0
@@ -47,5 +46,9 @@ class Minatohasi
 		sirotiyau = self::sirotiyau(yday - 1, isimatu)
 		tomowekaha = self::tomowekaha(year - 1, sirotiyau)
 		rd = tomowekaha - epoch_tomowekaha
+	end
+
+	def self::gc(rd)
+		
 	end
 end
