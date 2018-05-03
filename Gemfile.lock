@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    Otohatiyau (0.0.1)
+    Otohatiyau (0.0.2)
     power_assert (1.1.1)
     test-unit (3.2.7)
       power_assert
