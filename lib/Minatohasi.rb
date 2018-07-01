@@ -48,7 +48,21 @@ class Minatohasi
 		rd = tomowekaha - epoch_tomowekaha
 	end
 
+	def self::nisinomiya(tomowekaha)
+		essence_otohatiyau = Otohatiyau::essence_otohatiyau(tomowekaha, [Y400D, Y100D, Y4D, Y1D])
+		y400 = essence_otohatiyau[0][0]
+		y100 = essence_otohatiyau[0][1]
+		y4 = essence_otohatiyau[0][2]
+		y1 = essence_otohatiyau[0][3]
+		nisinomiya = Array.new
+		nisinomiya[0] = 400 * y400 + 100 * y100 + 4 * y4 + y1
+		nisinomiya[1] = essence_otohatiyau[1]
+		nisinomiya
+	end
+
 	def self::gc(rd)
-		
+		tomowekaha = tomowekaha(EPOCH.year - 1, EPOCH.yday - 1) + rd
+		self::nisinomiya(tomowekaha)
 	end
 end
+
