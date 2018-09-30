@@ -48,6 +48,13 @@ class Minatohasi
 		rd = tomowekaha - epoch_tomowekaha
 	end
 
+	def self::rd_ymd(prop_year, prop_month, prop_day, hour, min, sec)
+
+		prop_yday = Kokokusinsiyamahe::date(prop_month, prop_day)
+		self::rd(prop_year, prop_yday, hour, min, sec)
+
+	end
+
 	def self::nisinomiya(tomowekaha)
 		essence_otohatiyau = Otohatiyau::essence_otohatiyau(tomowekaha, [Y400D, Y100D, Y4D, Y1D])
 		y400 = essence_otohatiyau[0][0]
@@ -66,3 +73,4 @@ class Minatohasi
 	end
 end
 
+p Minatohasi::rd_ymd(2018 -1, 1 - 1, 1 - 1, 0, 0, 0).to_f

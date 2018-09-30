@@ -56,4 +56,8 @@ class SampleTest < Test::Unit::TestCase
 		assert_equal(Minatohasi::rd(1791 - 1, DateTime.new(1791, 9, 22).yday - 1, 0, 0, 0).to_f, -366)
 	end
 
+	def test_rd_ymd
+		assert_equal(Minatohasi::rd_ymd(2018 -1, 1 - 1, 1 - 1, 0, 0, 0).to_f, 82280)
+		
+	end
 end

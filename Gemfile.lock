@@ -3,8 +3,8 @@ GEM
   specs:
     Kokokusinsiyamahe (0.0.0)
     Otohatiyau (0.0.2)
-    power_assert (1.1.1)
-    test-unit (3.2.7)
+    power_assert (1.1.3)
+    test-unit (3.2.8)
       power_assert
 
 PLATFORMS
