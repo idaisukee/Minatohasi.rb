@@ -8,5 +8,5 @@ require(File.join(lib_dir, 'Minatohasi.rb'))
 
 now = DateTime.now.new_offset(Rational(1, 24))
 
-rd = Minatohasi::rd(now.year, now.yday, now.hour, now.min, now.sec)
+rd = Minatohasi::rd(now.year - 1, now.yday - 1, now.hour, now.min, now.sec)
 print str = sprintf('%#.10g', rd)

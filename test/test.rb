@@ -42,18 +42,18 @@ class SampleTest < Test::Unit::TestCase
 	end
 
 	def test_rd
-		assert_equal(Minatohasi::rd(2018, 1, 0, 0, 0).to_f, 82280)
-		assert_equal(Minatohasi::rd(2017, DateTime.new(2017, 3, 27).yday, 0, 0, 0).to_f, 82000)
-		assert_equal(Minatohasi::rd(2018, DateTime.new(2018, 4, 28).yday, 0, 0, 0).to_f, 82397)
-		assert_equal(Minatohasi::rd(2018, DateTime.new(2018, 4, 28).yday, 12, 0, 0).to_f, 82397.5)
-		assert_equal(Minatohasi::rd(1792, DateTime.new(1792, 9, 22).yday, 0, 0, 0).to_f, 0)
-		assert_equal(Minatohasi::rd(1792, DateTime.new(1792, 9, 22).yday, 12, 0, 0).to_f, 0.5)
-		assert_equal(Minatohasi::rd(1792, DateTime.new(1792, 9, 22).yday, 18, 0, 0).to_f, 0.75)
-		assert_equal(Minatohasi::rd(1792, DateTime.new(1792, 9, 23).yday, 0, 0, 0).to_f, 1)
-		assert_equal(Minatohasi::rd(1792, DateTime.new(1792, 9, 23).yday, 12, 0, 0).to_f, 1.5)
-		assert_equal(Minatohasi::rd(1793, DateTime.new(1793, 9, 22).yday, 0, 0, 0).to_f, 365)
-		assert_equal(Minatohasi::rd(1792, DateTime.new(1792, 9, 21).yday, 0, 0, 0).to_f, -1)
-		assert_equal(Minatohasi::rd(1791, DateTime.new(1791, 9, 22).yday, 0, 0, 0).to_f, -366)
+		assert_equal(Minatohasi::rd(2018 -1, 1 - 1, 0, 0, 0).to_f, 82280)
+		assert_equal(Minatohasi::rd(2017 - 1, DateTime.new(2017, 3, 27).yday - 1, 0, 0, 0).to_f, 82000)
+		assert_equal(Minatohasi::rd(2018 - 1, DateTime.new(2018, 4, 28).yday - 1, 0, 0, 0).to_f, 82397)
+		assert_equal(Minatohasi::rd(2018 - 1, DateTime.new(2018, 4, 28).yday - 1, 12, 0, 0).to_f, 82397.5)
+		assert_equal(Minatohasi::rd(1792 - 1, DateTime.new(1792, 9, 22).yday - 1, 0, 0, 0).to_f, 0)
+		assert_equal(Minatohasi::rd(1792 - 1, DateTime.new(1792, 9, 22).yday - 1, 12, 0, 0).to_f, 0.5)
+		assert_equal(Minatohasi::rd(1792 - 1, DateTime.new(1792, 9, 22).yday - 1, 18, 0, 0).to_f, 0.75)
+		assert_equal(Minatohasi::rd(1792 - 1, DateTime.new(1792, 9, 23).yday - 1, 0, 0, 0).to_f, 1)
+		assert_equal(Minatohasi::rd(1792 - 1, DateTime.new(1792, 9, 23).yday - 1, 12, 0, 0).to_f, 1.5)
+		assert_equal(Minatohasi::rd(1793 - 1, DateTime.new(1793, 9, 22).yday - 1, 0, 0, 0).to_f, 365)
+		assert_equal(Minatohasi::rd(1792 - 1, DateTime.new(1792, 9, 21).yday - 1, 0, 0, 0).to_f, -1)
+		assert_equal(Minatohasi::rd(1791 - 1, DateTime.new(1791, 9, 22).yday - 1, 0, 0, 0).to_f, -366)
 	end
 
 end
