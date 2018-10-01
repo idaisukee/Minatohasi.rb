@@ -11,4 +11,5 @@ Gem::Specification.new do |s|
     'https://tanukinonegura.com'
   s.license       = 'MIT'
 	s.add_runtime_dependency 'Otohatiyau'
+	s.add_runtime_dependency 'Kokokusinsiyamahe'
 end
